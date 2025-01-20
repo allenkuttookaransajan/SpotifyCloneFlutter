@@ -6,6 +6,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:music_streaming_app/common/widgets/button/basic_app_button.dart';
 import 'package:music_streaming_app/core/configs/assets/app_images.dart';
 import 'package:music_streaming_app/core/configs/assets/app_vector.dart';
+import 'package:music_streaming_app/presentation/auth/pages/signup_or_signin.dart';
 import 'package:music_streaming_app/presentation/choose_mode/pages/bloc/theme_cubit.dart';
 
 class ChooseModePage extends StatelessWidget {
@@ -148,7 +149,7 @@ class ChooseModePage extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (BuildContext context) =>
-                            const ChooseModePage(),
+                            const SignupOrSignin(),
                       ),
                     );
                   },
