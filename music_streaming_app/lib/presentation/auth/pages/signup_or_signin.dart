@@ -5,7 +5,8 @@ import 'package:music_streaming_app/common/widgets/appbar/app_bar.dart';
 import 'package:music_streaming_app/common/widgets/button/basic_app_button.dart';
 import 'package:music_streaming_app/core/configs/assets/app_images.dart';
 import 'package:music_streaming_app/core/configs/assets/app_vector.dart';
-import 'package:music_streaming_app/core/configs/theme/app_colors.dart';
+import 'package:music_streaming_app/presentation/auth/pages/signin.dart';
+import 'package:music_streaming_app/presentation/auth/pages/signup.dart';
 
 class SignupOrSignin extends StatelessWidget {
   const SignupOrSignin({super.key});
@@ -66,8 +67,17 @@ class SignupOrSignin extends StatelessWidget {
                     children: [
                       Expanded(
                         flex: 1,
-                        child:
-                            BasicAppButton(onPressed: () {}, title: 'Register'),
+                        child: BasicAppButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      const SignupPage(),
+                                ),
+                              );
+                            },
+                            title: 'Register'),
                       ),
                       const SizedBox(
                         width: 20,
@@ -75,7 +85,15 @@ class SignupOrSignin extends StatelessWidget {
                       Expanded(
                         flex: 1,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    const SigninPage(),
+                              ),
+                            );
+                          },
                           child: Text(
                             'Sign in',
                             style: TextStyle(
