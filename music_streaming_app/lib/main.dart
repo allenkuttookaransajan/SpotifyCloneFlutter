@@ -7,6 +7,7 @@ import 'package:music_streaming_app/core/configs/theme/app_theme.dart';
 import 'package:music_streaming_app/firebase_options.dart';
 import 'package:music_streaming_app/presentation/choose_mode/pages/bloc/theme_cubit.dart';
 import 'package:music_streaming_app/presentation/splash/pages/splash.dart';
+import 'package:music_streaming_app/service_locator.dart';
 import 'package:path_provider/path_provider.dart';
 
 Future<void> main() async {
@@ -17,6 +18,7 @@ Future<void> main() async {
         : await getApplicationDocumentsDirectory(),
   );
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await intializeDependencies();
   runApp(const MyApp());
 }
 
